@@ -1,0 +1,38 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes: 
+      - ./dump/:/var/lib/mysql
+    ports:
+      - "3308:3306"
+    container_name: mysql
+
+  php-apache:
+    build: Dockerfiles/php-apache/
+    env_file:
+      - .env
+    links:
+      - db:${MYSQL_SERVER}
+    volumes: 
+      - ./www/:/var/www/html
+    ports:
+      - "3003:80"
+    container_name: App
+
+  claseadm:
+    image: phpmyadmin:latest
+    container_name: adm
+    restart: always
+    ports:
+      - "8081:80"
+    env_file: .env
+    links:
+      - db:db
+
