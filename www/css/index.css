@@ -1,62 +1,79 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 
-body{
+body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
     background: linear-gradient(150deg, #6C3483, #58d683);
-   
 }
 
 /* ajustes para el cuerpo */
 
-.registro{
-    width: 615px;
+.registro {
+    width: 90%;
+    max-width: 600px; 
     background-color: #24303c;
-    padding: 30px;
+    padding: 20px; 
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
     border-radius: 10px;
-   color: white;
-   box-shadow: 7px 13px 37px #000;
-   margin-bottom: 60px;
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+    margin-bottom: 450px;
 }
-/* ajustes para el h3 y h2*/
 
-.registro h3{
-    font-size: 35px;
+/* ajustes para el h3 y h2 */
+
+.registro h3 {
+    font-size: 28px; 
     margin-bottom: 10px;
-    margin-left: 183px;
-   
-  
-}
-.registro h2{
-    font-size: 25px;
-    margin-bottom: 18px;
-
+    text-align: center; 
 }
 
-/* ajustes para los input*/
+.registro h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center; 
+}
 
-.control{
+/* ajustes para los input */
+
+.control {
     width: 100%;
     background-color: #24303c;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 20px; 
     border: 1px solid #1f53c5;
     color: white;
 }
-/* ajustes para la imagen*/
 
-.registro img{
- text-align: center;   
- width: 50px;
- height: 50px;
- margin-bottom: 20px;
- margin-left: 244px;
+/* ajustes para la imagen */
+.registro img {
+    display: block; 
+    margin: 0 auto 20px auto;
+    width: 50px;
+    height: 50px;
+}
+
+/* Ajustes específicos para pantallas más pequeñas */
+@media (max-width: 767px) {
+    .registro {
+        padding: 15px; /* Ajusta el padding */
+        margin-top: 30px; /* Ajusta el margen superior */
+    }
+
+    .registro h3 {
+        font-size: 24px; /* Ajusta el tamaño de fuente */
+    }
+
+    .registro h2 {
+        font-size: 18px; /* Ajusta el tamaño de fuente */
+    }
+
+    .control {
+        padding: 8px; /* Ajusta el padding de los inputs */
+    }
 }
